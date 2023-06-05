@@ -15,9 +15,8 @@
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
 
 ## Challenges 
-(discuss challenges you faced in the project)
+(Some challenges that I had experienced include: Inconsistent data that creates confusion, incorrect data, value entered in the wrong field, Errors in domain format and missing values.)
 
 ## Future Goals
 (What would you do if you had more time?)
-
-Answer: If I had more time I would go more in depth with the data process and try to learn more.)
+(Answer: If I had more time I would go more in depth with the data process and try to learn more.)
