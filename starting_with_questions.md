@@ -6,6 +6,13 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 SQL Queries:
 
+SELECT c.STATE, c.CITY, SUM(s.QTY * s.SALEPRICE)
+FROM DWSALE s
+INNER JOIN DWCUST c
+ON s.dwcustid = c.dwcustid
+GROUP BY c.STATE, c.CITY
+ORDER BY c.STATE;
+
 
 
 Answer:
