@@ -18,4 +18,6 @@
 (discuss challenges you faced in the project)
 
 ## Future Goals
-(what would you do if you had more time?)
+(What would you do if you had more time?)
+
+Answer: If I had more time I would go more in depth with the data process and try to learn more.)
