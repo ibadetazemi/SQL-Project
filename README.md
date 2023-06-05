@@ -1,7 +1,7 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-(To analyze and clean data.)
+(To analyze and clean data + find risk areas, identifying potential issues)
 
 ## Process
 ### (Step 1: Remove irrelevant, redundant, or duplicate data)
