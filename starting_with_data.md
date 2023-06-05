@@ -30,9 +30,17 @@ Answer:
 
 
 
-Question 5: --FIX DATA TYPES
+Question 5: --FIX DATA TYPES --REMOVE OUTLIERS:
 
 SQL Queries:
 
 Answer:
+
+
+Question 6: --REMOVE OUTLIERS:
+
+SQL Queries:
+
+Answer:
+
 
