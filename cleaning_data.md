@@ -41,6 +41,10 @@ ELSE year
 END
 FROM customers
 
+
+SELECT city, region FROM customers
+GROUP BY city, region
+
 5) Clean outliers:
 
 SELECT age FROM customers WHERE age >= 18 AND age <= 99
