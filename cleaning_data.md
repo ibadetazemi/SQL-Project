@@ -11,22 +11,22 @@ Below, provide the SQL queries you used to clean your data.
 
 Data cleaning steps:
 
-• Remove irrelevant, redundant, or duplicate data:
+1) Remove irrelevant, redundant, or duplicate data:
 
 SELECT * FROM customers WHERE country = 'Canada'
 SELECT DISTINCT * FROM customers
 
-• Clean “structural” issues:
+2) Clean “structural” issues:
 
 SELECT id, name, email, year, country,
 IF(state IN ('Not Applicable', 'N/A'), NULL, state) AS state_clean
 FROM customers
 
-• Type conversion:
+3)Type conversion:
 
 SELECT CAST(birth_date AS DATE) AS birthdate FROM customers
 
-• Clean missing data:
+4) Clean missing data:
 
 SELECT * FROM customers WHERE year IS NOT NULL
 
@@ -38,10 +38,10 @@ ELSE year
 END
 FROM customers
 
-• Clean outliers:
+5) Clean outliers:
 
 SELECT age FROM customers WHERE age >= 18 AND age <= 99
 
-• Validate:
+6) Validate:
 
 SELECT * FROM customers
