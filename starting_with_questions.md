@@ -33,7 +33,7 @@ WHERE country IN ('Canada', 'USA')
  AND city = 'All cities'
 
 
-SELECT * FROM customers 
+SELECT * FROM sales
 WHERE country IN ('Canada', 'USA') 
  AND title = 'Products'
  AND city = 'All cities'
