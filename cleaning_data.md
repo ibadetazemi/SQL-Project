@@ -19,6 +19,10 @@ SELECT DISTINCT * FROM customers
 SELECT customerid, firstname FROM customers
 SELECT DISTINCT(customerid), firstname FROM customers
 
+SELECT <sales> / <1,000,000>
+FROM products
+[WHERE sales_report]
+
 2) Clean “structural” issues:
 
 SELECT id, name, email, year, country,
