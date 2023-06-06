@@ -62,6 +62,13 @@ Answer:
 
 SQL Queries:
 
+SELECT MAX(products)
+FROM sales
+WHERE top-selling;
+WHERE country IN ('Canada', 'USA') 
+ AND title = 'Products'
+ AND city = 'All cities'
+
 
 
 Answer:
