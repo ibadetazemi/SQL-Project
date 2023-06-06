@@ -81,6 +81,8 @@ Answer:
 
 SQL Queries:
 
+ ( current month revenue - previous month revenue)/previous month revenue * 100.
+ WHERE country IN ('All Countries', 'All cities') 
 
 
 Answer:
