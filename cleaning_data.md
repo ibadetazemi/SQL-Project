@@ -6,7 +6,11 @@ Answer: The issues that I will address by cleaning data is: (incorrect, corrupte
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
+
+
+
 Data cleaning steps:
+
 • Remove irrelevant, redundant, or duplicate data:
 
 SELECT * FROM customers WHERE country = 'Canada'
