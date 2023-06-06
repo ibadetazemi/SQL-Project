@@ -7,9 +7,9 @@ Answer the following questions and provide the SQL queries used to find the answ
 SQL Queries:
 
 SELECT c.STATE, c.CITY, SUM(s.QTY * s.SALEPRICE)
-FROM DWSALE s
-INNER JOIN DWCUST c
-ON s.dwcustid = c.dwcustid
+FROM SALE s
+INNER JOIN CUST c
+ON s.custid = c.custid
 GROUP BY c.STATE, c.CITY
 ORDER BY c.STATE;
 
@@ -25,7 +25,10 @@ Answer:
 
 SQL Queries:
 
-
+SELECT * FROM customers 
+WHERE country IN ('Canada', 'USA') 
+ AND title = 'Products'
+ AND city = 'All cities'
 
 Answer:
 
