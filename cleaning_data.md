@@ -16,6 +16,9 @@ Data cleaning steps:
 SELECT * FROM customers WHERE country = 'Canada'
 SELECT DISTINCT * FROM customers
 
+SELECT customerid, firstname FROM customers
+SELECT DISTINCT(customerid), firstname FROM customers
+
 2) Clean “structural” issues:
 
 SELECT id, name, email, year, country,
