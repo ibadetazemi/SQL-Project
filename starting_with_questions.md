@@ -25,6 +25,11 @@ Answer:
 
 SQL Queries:
 
+SELECT *
+FROM products
+WHERE UPPER(quantityperunit) LIKE '%PIECES%'
+
+
 SELECT * FROM customers 
 WHERE country IN ('Canada', 'USA') 
  AND title = 'Products'
