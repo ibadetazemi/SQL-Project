@@ -5,3 +5,39 @@ Answer: The issues that I will address by cleaning data is: (incorrect, corrupte
 
 Queries:
 Below, provide the SQL queries you used to clean your data.
+
+Data cleaning steps:
+• Remove irrelevant, redundant, or duplicate data:
+
+SELECT * FROM customers WHERE country = 'Canada'
+SELECT DISTINCT * FROM customers
+
+• Clean “structural” issues:
+
+SELECT id, name, email, year, country,
+IF(state IN ('Not Applicable', 'N/A'), NULL, state) AS state_clean
+FROM customers
+
+• Type conversion:
+
+SELECT CAST(birth_date AS DATE) AS birthdate FROM customers
+
+• Clean missing data:
+
+SELECT * FROM customers WHERE year IS NOT NULL
+
+
+SELECT
+CASE
+WHEN year IS NULL THEN (SELECT AVG(year) FROM customers),year)
+ELSE year
+END
+FROM customers
+
+• Clean outliers:
+
+SELECT age FROM customers WHERE age >= 18 AND age <= 99
+
+• Validate:
+
+SELECT * FROM customers
