@@ -13,6 +13,9 @@ Data cleaning steps:
 
 1) Remove irrelevant, redundant, or duplicate data:
 
+SELECT * FROM employees
+LIMIT 100
+
 SELECT * FROM customers WHERE country = 'Canada'
 SELECT DISTINCT * FROM customers
 
