@@ -12,7 +12,8 @@
 ### (Step 6: Validate)
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+(Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some errors.)
+And how you used the data to answer those questions: I had used the data to answer these questions by analysing the data and interpreting the data)
 
 ## Challenges 
 (Some challenges that I had experienced include: Inconsistent data that creates confusion, incorrect data, value entered in the wrong field, Errors in domain format and missing values.)
