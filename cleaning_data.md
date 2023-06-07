@@ -37,6 +37,11 @@ FROM customers
 SELECT CAST(birth_date AS DATE) AS birthdate FROM customers
 
 4) Clean missing data:
+  
+  
+SELECT *
+FROM orders
+WHERE orderid IS NULL
 
 SELECT * FROM customers WHERE year IS NOT NULL
 
