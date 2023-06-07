@@ -26,9 +26,9 @@ SQL Queries:
 
 SELECT *
  FROM products
- WHERE last_name LIKE 'C%' 
+ WHERE last_name LIKE 'All Countries', 'All cities%' 
 
-
+SELECT * FROM product WHERE name LIKE '%Canada', 'USA%';
 
 Answer:
 
