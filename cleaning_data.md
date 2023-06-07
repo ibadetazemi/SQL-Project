@@ -56,6 +56,8 @@ FROM customers
 
 SELECT city, region FROM customers
 GROUP BY city, region
+  
+COALESCE(customer_id, company, 'missing')
 
 5) Clean outliers:
 
