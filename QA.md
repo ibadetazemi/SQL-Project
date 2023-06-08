@@ -39,6 +39,9 @@ Question 2: Can you find any deleted data?
 
 SQL Queries:
 
+CREATE NONCLUSTERED INDEX <Name of Missing Index, sysname,>
+ON Sales.SalesOrderHeader (Status,SalesPersonID)
+INCLUDE (SalesOrderID,SubTotal)
 
 
 Answer:
