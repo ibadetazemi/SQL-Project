@@ -36,7 +36,7 @@ Answer:
 
 
 
-Question 5: --FIX DATA TYPES --REMOVE OUTLIERS:
+Question 5: --FIX DATA TYPES 
 
 SQL Queries:
 
