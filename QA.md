@@ -5,78 +5,101 @@ What are your risk areas? Identify and describe them.
 (Answer: My risk areas include: Unknown weak points, finding erros, deleted data, multiple data sources, "Clean" data needs to replace "Old" data and consistant, costly maintencance. )
 
 Provide the SQL queries used to execute the QA process below:
+-------------------------------
+
+Task 1: Data Profiling
+
+Queries:
+
+SELECT *
+FROM information_schema.tables
+WHERE table_schema = 'public';
 
 
- Checking referential integrity for sales_by_sku + products table using categoryID
------------------------------------------------------------------------------------------------------------
+--Get column data types and nullability for the products table--
 
--- Ecommerce SQL Project
-
-1) First step: Select Query to analye data:
-
---Select command--
-
-SELECT Column1, Column2,
- 
-FROM <sales_by_sku>;
-
----Here the following columns: (Column1 + Column2) are the Field/Attribute names.---
-
----Displays all the available fields---
-
-SELECT Column1, Column2,......
- 
-FROM <Sales_by_sku>
-
-Answer:
-
-First Name,Last Name,Date Of Birth,Email
-John,Doe,1995-01-05,john.doe@postgresqltutorial.com
-Jane,Doe,1995-02-05,jane.doe@postgresqltutorial.com<img width="261" 
-
-SELECT * FROM Customer;
-
-2) Get the number of products from the products table:
-
-	
-SELECT ID,Products FROM Customers;
-
-SELECT COUNT("ProductId") FROM "Products"
-
-Answer = Total number of products = 246
+SELECT column_name, data_type, is_nullable
+FROM information_schema.columns
+WHERE table_name = 'customers';
 
 
-3) Get the largest value of the Sales_by_sku numeric Column.
+--Count unique values for the country column in the sales_by_sku table--
+
+SELECT COUNT(DISTINCT country)
+FROM sales_by_sku;
+
+Answer: 5
+
+Task 2: Data Validation
+
+Queries:
+
+--Check for missing data in the sales_report table--
+
+SELECT *
+FROM sales_report
+WHERE quantity IS NULL;
 
 
-SELECT  MAX(Sales_by_sku) FROM Customers;
+--Check for duplicate data in the products table--
+SELECT productsid, COUNT(*)
+FROM products
+GROUP BY productsid
+HAVING COUNT(*) > 1;
 
-Answer: Min = 2,000
 
-							
-4) Analyse Products + Sales_by_sku in rowsa:
-							
-							
-       SELECT 'sales_by_sku' AS table_name, 
-       COUNT(*) AS count_rows, 
-       'sales_by_sku' AS key_name,
-       COUNT(DISTINCT(sales_by_skuid)) AS count_distinct_key
-FROM Sales_by_sku
+Answer: No missing data + no duplicates found
 
-UNION ALL
+Task 3: Data Cleansing
 
-SELECT 'products' AS table_name, 
-       COUNT(*) AS count_rows,    
-       'productsid' AS key_name,
-       COUNT(DISTINCT(productsid)) AS count_distinct_key 
-FROM products;	
-							
-	Answer: False						
-							
-							
-						
-							
-							
+Queries:
+
+--Clean the country names in the all_sessions table by removing non-alphabetical characters--
+
+UPDATE all_sessions
+SET country = regexp_replace(country, '[^a-z]', '', 'g')
+WHERE country LIKE '%(%-%) %-%';
+
+--Standardize the country names in the products table--
+UPDATE customers
+SET country = CASE
+    WHEN country IN ('CA', 'Canada') THEN 'United States'
+    WHEN country = 'USA' THEN 'United States'
+    ELSE country
+    END;
+
+Answer: Multiple countries were found
+
+Task 4: Testing
+
+Queries:
+
+--Test that the order dates in the orders table are valid--
+
+SELECT *
+FROM orders
+WHERE orderdate < '2023-06-01';
+
+
+--Test that the discount amounts in the sales_report table are accurate--
+
+Queries:
+
+SELECT orderid, SUM(unitprice * quantity * (1 - discount)) AS total_discount
+FROM order_details
+GROUP BY orderid
+HAVING SUM(unitprice * quantity * (1 - discount)) < 0;
+
+Answer: No discounts were found
+
+
+--Get the largest value of the Sales_by_sku numeric Column--
+
+
+SELECT  MAX(Sales_by_sku) FROM Visit;
+
+Answer: Max = 50
+
 
 
 
