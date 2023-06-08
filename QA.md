@@ -86,7 +86,9 @@ SQL Queries:
 
 UPDATE products
 SET column1 = value1, column2 = value2, ...
-WHERE new products;
+WHERE old products;
+
+SELECT REPLACE('sales', 'A', 'B');
 
 Answer:
 
