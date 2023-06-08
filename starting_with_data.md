@@ -36,7 +36,7 @@ Answer:
 
 
 
-Question 4: --Change Y and N to YES and No in Column 'SoldAsVacant:
+Question 4: --Change Y and N to YES and No in Column 'Sales':
 
 SQL Queries:
 
