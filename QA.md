@@ -24,6 +24,16 @@ FROM <sales_by_sku>;
 
 ---Displays all the available fields---
 
+SELECT Column1, Column2,......
+ 
+FROM <Sales_by_sku>
+
+Answer:
+
+First Name,Last Name,Date Of Birth,Email
+John,Doe,1995-01-05,john.doe@postgresqltutorial.com
+Jane,Doe,1995-02-05,jane.doe@postgresqltutorial.com<img width="261" 
+
 SELECT * FROM Customer;
 
 2) Get the number of products from the products table:
@@ -32,6 +42,16 @@ SELECT * FROM Customer;
 SELECT ID,Products FROM Customers;
 
 SELECT COUNT("ProductId") FROM "Products"
+
+Answer = Total number of products = 246
+
+
+3) Get the largest value of the Sales_by_sku numeric Column.
+
+
+SELECT  MAX(Sales_by_sku) FROM Customers;
+
+Answer: Min = 2,000
 
 
 
