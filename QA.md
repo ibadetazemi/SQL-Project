@@ -74,6 +74,10 @@ SQL Queries:
 SELECT * FROM Customers
 WHERE Country IN (SELECT Country FROM Suppliers);
 
+SELECT O.custId, C.custName, SUM(totalAmount)
+FROM orders.orderinfo O INNER JOIN customers.customer C ON O.custId = C.custId
+GROUP BY O.custID, C.custName
+
 Answer:
 
 Question 4: 
