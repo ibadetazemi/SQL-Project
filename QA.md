@@ -100,6 +100,8 @@ Question 5: Can you find consistant data?
 
 SQL Queries:
 
+DBCC CHECKDB
+
 
 
 Answer:
