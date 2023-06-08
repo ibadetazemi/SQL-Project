@@ -36,6 +36,25 @@ Question 2: --Populate Customer Address data:
 
 SQL Queries:
 
+SELECT ParcelID, CustomerAddress
+FROM Address..customer
+ORDER BY ParcelID
+
+SELECT a.ParcelID, a.CustomerAddress, b.ParcelID, b.CustomerAddress,ISNULL(a.CustomerAddress, b.CustomerAddress)
+FROM Customer..address a
+JOIN Customer..address b
+ON a.ParcelID = b.ParcelID
+AND a.[UniqueID ]<>b.[UniqueID ]
+WHERE a.CustomerAddress IS NULL
+
+UPDATE a
+SET PropertyAddress = ISNULL(a.PropertyAddress, b.PropertyAddress)
+FROM Customer..address a
+JOIN Customer..address b
+ON a.ParcelID = b.ParcelID
+AND a.[UniqueID ]<>b.[UniqueID ]
+WHERE a.CustomerAddress IS NULL
+
 Answer:
 
 
@@ -44,6 +63,23 @@ Question 3: --Break Address into individual columns (Address, City, State):
 
 SQL Queries:
 
+SELECT
+SUBSTRING(PropertyAddress, 1, CHARINDEX(',',PropertyAddress)-1) as Address
+, SUBSTRING(PropertyAddress, CHARINDEX(',',PropertyAddress)+1, LEN(PropertyAddress)) as City
+FROM Customer..address
+
+ALTER TABLE Customer..address
+ADD PropertyAddressClean Nvarchar (250)
+
+UPDATE Customer..address
+SET PropertyAddressClean = SUBSTRING(PropertyAddress, 1, CHARINDEX(',',PropertyAddress)-1)
+
+ALTER TABLE Customer..address
+ADD Property_city Nvarchar (250);
+
+UPDATE Customer..address
+SET Property_city = SUBSTRING(PropertyAddress, CHARINDEX(',',PropertyAddress)+1, LEN(PropertyAddress))
+
 Answer:
 
 
@@ -51,6 +87,27 @@ Answer:
 Question 4: --Change Y and N to YES and No in Column 'Sales':
 
 SQL Queries:
+
+SELECT Distinct( SoldAsVacant), COUNT(SoldAsVacant)
+FROM Customer..address
+Group by SoldAsVacant
+ORDER BY 2
+
+SELECT SoldAsVacant,
+CASE
+WHEN SoldAsVacant = 'Y' THEN 'Yes'
+WHEN SoldAsVacant = 'N' THEN 'No'
+ELSE SoldAsVacant
+END
+FROM Customer..address
+
+
+UPDATE Customer..address
+SET SoldAsVacant=CASE
+WHEN SoldAsVacant = 'Y' THEN 'Yes'
+WHEN SoldAsVacant = 'N' THEN 'No'
+ELSE SoldAsVacant
+END
 
 Answer:
 
