@@ -7,9 +7,9 @@ What are your risk areas? Identify and describe them.
 Provide the SQL queries used to execute the QA process below:
 
 
-Question 1: 
+Question 1: Find unknown weak points?
 
-SQL Queries: Find unknown weak points.
+SQL Queries: 
 
 SELECT DISTINCT
 	PRODUCT.ProductID,
