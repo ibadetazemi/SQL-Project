@@ -7,7 +7,7 @@ What are your risk areas? Identify and describe them.
 Provide the SQL queries used to execute the QA process below:
 
 
- Checking referential integrity for sales_by_sku + 'products table using categoryID
+ Checking referential integrity for sales_by_sku + products table using categoryID
 -----------------------------------------------------------------------------------------------------------
 
 -- Ecommerce SQL Project
@@ -53,6 +53,30 @@ SELECT  MAX(Sales_by_sku) FROM Customers;
 
 Answer: Min = 2,000
 
+							
+4) Analyse Products + Sales_by_sku in rowsa:
+							
+							
+       SELECT 'sales_by_sku' AS table_name, 
+       COUNT(*) AS count_rows, 
+       'sales_by_sku' AS key_name,
+       COUNT(DISTINCT(sales_by_skuid)) AS count_distinct_key
+FROM Sales_by_sku
+
+UNION ALL
+
+SELECT 'products' AS table_name, 
+       COUNT(*) AS count_rows,    
+       'productsid' AS key_name,
+       COUNT(DISTINCT(productsid)) AS count_distinct_key 
+FROM products;	
+							
+	Answer: False						
+							
+							
+						
+							
+							
 
 
 
