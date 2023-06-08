@@ -2,7 +2,7 @@
 
 What are your risk areas? Identify and describe them.
 
-(Answer: My risk areas include: Unknown weak points, deleted data, multiple data sources, "Clean" data needs to replace "Old" data and consistant, costly maintencance. )
+(Answer: My risk areas include: Unknown weak points, finding erros, deleted data, multiple data sources, "Clean" data needs to replace "Old" data and consistant, costly maintencance. )
 
 Provide the SQL queries used to execute the QA process below:
 
