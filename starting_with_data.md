@@ -28,7 +28,7 @@ SET SaleDate2 = CONVERT (Date, SaleDate)
 SELECT SaleDate, SaleDate2
 FROM Project..products
 
-Answer: 
+Answer: There were multiple found.
 
 
 
@@ -55,7 +55,7 @@ ON a.ParcelID = b.ParcelID
 AND a.[UniqueID ]<>b.[UniqueID ]
 WHERE a.CustomerAddress IS NULL
 
-Answer:
+Answer: Some errors were found.
 
 
 
@@ -80,11 +80,11 @@ ADD Property_city Nvarchar (250);
 UPDATE Customer..address
 SET Property_city = SUBSTRING(PropertyAddress, CHARINDEX(',',PropertyAddress)+1, LEN(PropertyAddress))
 
-Answer:
+Answer: Some address information was missing.
 
 
 
-Question 4: --Change Y and N to YES and No in Column 'Sales':
+Question 4: --Change Y and N to YES and No in Column 'Address':
 
 SQL Queries:
 
@@ -109,7 +109,7 @@ WHEN SoldAsVacant = 'N' THEN 'No'
 ELSE SoldAsVacant
 END
 
-Answer:
+Answer: Helped to filter the data.
 
 
 
@@ -149,7 +149,7 @@ DELETE
 FROM RowNumCTE
 WHERE row_num>1
 
-Answer:
+Answer: Some duplicates were found.
 
 
 Question 6: --Delete Unused Columns:
@@ -162,6 +162,6 @@ FROM Customer..address
 Alter Table Customer..address
 DROP Column customerAddress, CustomerAddress, 
 
-Answer:
+Answer: Some unused columns were found.
 
 
