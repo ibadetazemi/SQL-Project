@@ -9,9 +9,15 @@ Provide the SQL queries used to execute the QA process below:
 
 Question 1: 
 
-SQL Queries:
+SQL Queries: Find unknown weak points.
 
-
+SELECT DISTINCT
+	PRODUCT.ProductID,
+	PRODUCT.Name
+FROM Production.Product PRODUCT
+INNER JOIN Sales.SalesOrderDetail DETAIL
+ON PRODUCT.ProductID = DETAIL.ProductID
+OR PRODUCT.rowguid = DETAIL.rowguid;
 
 Answer:
 
