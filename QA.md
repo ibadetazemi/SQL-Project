@@ -90,9 +90,13 @@ WHERE products;
 
 SELECT REPLACE('sales', 'A', 'B');
 
+UPDATE Customers
+SET ContactName='Jon'
+WHERE Country='Canada';
+
 Answer:
 
-Question 5: 
+Question 5: Can you find consistant data?
 
 SQL Queries:
 
