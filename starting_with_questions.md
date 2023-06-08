@@ -49,7 +49,11 @@ Answer:
 
 SQL Queries:
 
+SELECT * FROM Customers
+WHERE Product LIKE 'All cities%, 'All countries%';
 
+SELECT * FROM Customers
+WHERE Products LIKE 'All cities%, 'All countries%';
 
 Answer:
 
