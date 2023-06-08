@@ -7,101 +7,97 @@ What are your risk areas? Identify and describe them.
 Provide the SQL queries used to execute the QA process below:
 
 
-Question 1: Find unknown weak points?
+ SQL Query QA Example: Lets check referential integrity between product and category table using categoryID
+-----------------------------------------------------------------------------------------------------------
 
-SQL Queries: 
+-- union example from previous week
+EXPLAIN ANALYZE
+SELECT 'products' AS table_name, 
+       COUNT(*) AS count_rows, 
+       'categoryid' AS key_name,
+       COUNT(DISTINCT(categoryid)) AS count_distinct_key
+FROM products
 
-SELECT DISTINCT
-	PRODUCT.ProductID,
-	PRODUCT.Name
-FROM Production.Product PRODUCT
-INNER JOIN Sales.SalesOrderDetail DETAIL
-ON PRODUCT.ProductID = DETAIL.ProductID
-OR PRODUCT.rowguid = DETAIL.rowguid;
+UNION ALL
+
+SELECT 'categories' AS table_name, 
+       COUNT(*) AS count_rows,    -- second statment column names dont matter
+       'categoryid' AS key_name,
+       COUNT(DISTINCT(categoryid)) AS count_distinct_key  -- but the amount of columns do... 
+FROM categories;
+
+
+-- cte to QA using distinct value count of categoryID
+WITH CTE AS(
+SELECT 'products' AS table_name, 
+       COUNT(*) AS count_rows, 
+       'categoryid' AS key_name,
+       COUNT(DISTINCT(categoryid)) AS count_distinct_categoryid
+FROM products
+
+UNION ALL
+
+SELECT 'categories' AS table_name, --f
+       COUNT(*) AS count_rows,    
+       'categoryid' AS key_name,
+       COUNT(DISTINCT(categoryid)) AS count_distinct_categoryid   
+FROM categories 
+            ), 
+            
+QA_raw AS(
+SELECT COUNT(DISTINCT(count_distinct_categoryid)) as test_result FROM cte
+)
+
+
+SELECT 'referential_integrity_check' AS qa_test_name,
+       CASE
+        WHEN test_result = 1 THEN 'pass'
+        ELSE 'fail'
+       END AS qa_result
+FROM qa_raw;           
+
+
+-- Adhoc question about ntile windows function
+
 
 SELECT
-	PRODUCT.ProductID,
-	PRODUCT.Name
-FROM Production.Product PRODUCT
-INNER JOIN Sales.SalesOrderDetail DETAIL
-ON PRODUCT.ProductID = DETAIL.ProductID
-UNION
-SELECT
-	PRODUCT.ProductID,
-	PRODUCT.Name
-FROM Production.Product PRODUCT
-INNER JOIN Sales.SalesOrderDetail DETAIL
-ON PRODUCT.rowguid = DETAIL.rowguid
-
-Answer:
-
-Question 2: Can you find any deleted data?
-
-SQL Queries:
-
-USE RecoverDeletedRecords
-
-GO
-
-SELECT
-
- [Current LSN],   
-
- [Transaction ID],
-
-     Operation,
-
-     Context,
-
-     AllocUnitName
-
-FROM
-
-    fn_dblog(NULL, NULL)
-
+ *, 
+ ROUND(COALESCE(100 * (row_count/LAG(row_count) 
+  OVER (
+   ORDER BY row_count DESC) - 1),0), 2) || '%' AS daily_percentage_change
+FROM (
+        SELECT DISTINCT * from (
+                                 SELECT DISTINCT Date(OrderDate),
+                                  Count(*) as row_count
+                                  FROM
+                                   Orders
+                                  WHERE
+                                    OrderDate is NOT NULL
+                                  Group BY 1
+                                  ORDER BY OrderDate DESC
+      ) as sq
 WHERE
+ EXTRACT(YEAR from Date) > '1997' -- and daily_percentage_change > 0
+) as sq3
+GROUP BY
+ Date, row_count;
 
-    Operation = ‘LOP_DELETE_ROWS’
-    
-    
 
-Answer:
+-- we approached it with a cte in 2 steps
+WITH cte AS(
+SELECT *, NTILE(3) OVER(ORDER BY unitprice) AS n_test
+FROM products
+    )
 
-Question 3: Can you find multiple data sources?
+SELECT n_test, COUNT(*), MIN(unitprice), MAX(unitprice), AVG(unitprice) 
+FROM cte
+GROUP BY n_test
+ORDER BY n_test;
 
-SQL Queries:
 
-SELECT * FROM Customers
-WHERE Country IN (SELECT Country FROM Suppliers);
-
-SELECT O.custId, C.custName, SUM(totalAmount)
-FROM orders.orderinfo O INNER JOIN customers.customer C ON O.custId = C.custId
-GROUP BY O.custID, C.custName
-
-Answer:
-
-Question 4: Can you find the "Clean" data needs to replace "Old" data and consistant?
-
-SQL Queries:
-
-UPDATE products
-SET column1 = value1, column2 = value2, ...
-WHERE products;
-
-SELECT REPLACE('sales', 'A', 'B');
-
-UPDATE Customers
-SET ContactName='Jon'
-WHERE Country='Canada';
-
-Answer:
-
-Question 5: Can you find consistant data?
-
-SQL Queries:
-
-DBCC CHECKDB
+SELECT * FROM products;
 
 
 
-Answer:
+
+
