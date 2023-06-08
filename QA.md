@@ -39,9 +39,29 @@ Question 2: Can you find any deleted data?
 
 SQL Queries:
 
-CREATE NONCLUSTERED INDEX <Name of Missing Index, sysname,>
-ON Sales.SalesOrderHeader (Status,SalesPersonID)
-INCLUDE (SalesOrderID,SubTotal)
+USE RecoverDeletedRecords
+
+GO
+
+SELECT
+
+ [Current LSN],   
+
+ [Transaction ID],
+
+     Operation,
+
+     Context,
+
+     AllocUnitName
+
+FROM
+
+    fn_dblog(NULL, NULL)
+
+WHERE
+
+    Operation = ‘LOP_DELETE_ROWS’
 
 
 Answer:
