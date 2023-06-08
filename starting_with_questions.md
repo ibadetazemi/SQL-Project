@@ -15,7 +15,7 @@ ORDER BY c.STATE;
 
 
 
-Answer:
+Answer: USA + Toronto
 
 
 
@@ -38,7 +38,7 @@ WHERE country IN ('Canada', 'USA')
  AND title = 'Products'
  AND city = 'All cities'
 
-Answer:
+Answer: 10
 
 
 
@@ -55,7 +55,7 @@ WHERE Product LIKE 'All cities%, 'All countries%';
 SELECT * FROM Customers
 WHERE Products LIKE 'All cities%, 'All countries%';
 
-Answer:
+Answer: No pattern found
 
 
 
@@ -75,7 +75,7 @@ WHERE country IN ('Canada', 'USA')
 
 
 
-Answer:
+Answer: Personal care/food items, no worthy pattern found.
 
 
 
