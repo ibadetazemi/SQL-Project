@@ -62,6 +62,8 @@ FROM
 WHERE
 
     Operation = ‘LOP_DELETE_ROWS’
+    
+    
 
 Answer:
 
