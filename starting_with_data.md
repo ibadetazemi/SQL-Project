@@ -4,7 +4,15 @@ In the starting_with_data.md file, write 3 - 5 new questions that you could answ
 
 --------------------
 
-Question 1: --FIX MISSING VALUES:
+--At first glance, I realize what we need to do next:
+--1.Standarize sales date format
+--2.Populate Property Address data
+--3.Break Address into individual columns (Address, City, State)
+--4.Change Y and N to YES and No in Column 'SoldAsVacant'
+--5.Remove Duplicates
+--6.Delete Unused Columns
+
+Question 1: --Standarize sales date format:
 
 SQL Queries:
 
@@ -12,7 +20,7 @@ Answer:
 
 
 
-Question 2: --FIX STRUCTURAL ISSUE:
+Question 2: --Populate Property Address data:
 
 SQL Queries:
 
@@ -20,7 +28,7 @@ Answer:
 
 
 
-Question 3: --REMOVE IRRELEVANT DATA:
+Question 3: --Break Address into individual columns (Address, City, State):
 
 SQL Queries:
 
@@ -28,7 +36,7 @@ Answer:
 
 
 
-Question 4: --REMOVE REDUNDANT DATA:
+Question 4: --Change Y and N to YES and No in Column 'SoldAsVacant:
 
 SQL Queries:
 
@@ -36,14 +44,14 @@ Answer:
 
 
 
-Question 5: --FIX DATA TYPES 
+Question 5: --Remove Duplicates:
 
 SQL Queries:
 
 Answer:
 
 
-Question 6: --REMOVE OUTLIERS:
+Question 6: --Delete Unused Columns:
 
 SQL Queries:
 
