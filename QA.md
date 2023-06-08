@@ -80,10 +80,13 @@ GROUP BY O.custID, C.custName
 
 Answer:
 
-Question 4: 
+Question 4: Can you find the "Clean" data needs to replace "Old" data and consistant?
 
 SQL Queries:
 
+UPDATE products
+SET column1 = value1, column2 = value2, ...
+WHERE new products;
 
 Answer:
 
