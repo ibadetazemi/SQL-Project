@@ -10,7 +10,7 @@ Provide the SQL queries used to execute the QA process below:
  Checking referential integrity between product and category table using categoryID
 -----------------------------------------------------------------------------------------------------------
 
--- union example from previous week
+-- Ecommerce
 EXPLAIN ANALYZE
 SELECT 'products' AS table_name, 
        COUNT(*) AS count_rows, 
