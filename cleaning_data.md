@@ -13,14 +13,14 @@ Data cleaning steps:
 
 1) Remove irrelevant, redundant, or duplicate data:
 
-SELECT * FROM employees
-LIMIT 100
+SELECT * FROM visitid
+LIMIT 200
 
-SELECT * FROM customers WHERE country = 'Canada'
-SELECT DISTINCT * FROM customers
+SELECT * FROM id WHERE country = 'Canada'
+SELECT DISTINCT * FROM persons
 
-SELECT customerid, firstname FROM customers
-SELECT DISTINCT(customerid), firstname FROM customers
+SELECT userid, firstname FROM accounts
+SELECT DISTINCT(visitid), firstname FROM accounts
 
 SELECT <sales> / <1,000,000>
 FROM products
@@ -30,39 +30,39 @@ FROM products
 
 SELECT id, name, email, year, country,
 IF(state IN ('Not Applicable', 'N/A'), NULL, state) AS state_clean
-FROM customers
+FROM accounts
 
 3)Type conversion:
 
-SELECT CAST(birth_date AS DATE) AS birthdate FROM customers
+SELECT CAST(birth_date AS DATE) AS birthdate FROM persons
 
 4) Clean missing data:
   
   
 SELECT *
-FROM orders
-WHERE orderid IS NULL
+FROM sales
+WHERE salesid IS NULL
 
-SELECT * FROM customers WHERE year IS NOT NULL
+SELECT * FROM userid WHERE year IS NOT NULL
 
 
 SELECT
 CASE
-WHEN year IS NULL THEN (SELECT AVG(year) FROM customers),year)
+WHEN year IS NULL THEN (SELECT AVG(year) FROM accounts),year)
 ELSE year
 END
-FROM customers
+FROM accounts
 
 
-SELECT city, region FROM customers
+SELECT city, region FROM accounts
 GROUP BY city, region
   
-COALESCE(customer_id, company, 'missing')
+COALESCE(products, company, 'missing')
 
 5) Clean outliers:
 
-SELECT age FROM customers WHERE age >= 18 AND age <= 99
+SELECT age FROM accounts WHERE age >= 18 AND age <= 99
 
 6) Validate:
 
-SELECT * FROM customers
+SELECT * FROM sales
