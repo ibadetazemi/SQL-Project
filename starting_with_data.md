@@ -4,11 +4,11 @@ In the starting_with_data.md file, write 3 - 5 new questions that you could answ
 
 --------------------
 
---At first glance, I realize what we need to do next:
+--At first glance, I realize what questions that we need to answer next:
 --1.Standarize sales date format
 --2.Populate Customer Address data
 --3.Break Address into individual columns (Address, City, State)
---4.Change Y and N to YES and No in Column 'SoldAsVacant'
+--4.Change Y and N to YES and Number in Column 'Sales'
 --5.Remove Duplicates
 --6.Delete Unused Columns
 
