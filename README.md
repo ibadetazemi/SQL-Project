@@ -20,4 +20,4 @@ And how you used the data to answer those questions: I had used the data to answ
 
 ## Future Goals
 (What would you do if you had more time?)
-(Answer: If I had more time I would go more in depth with the data process and try to learn more.)
+(Answer: If I had more time I would go more in depth with the data cleaning process and educate others about what I had learned and try to learn more.)
