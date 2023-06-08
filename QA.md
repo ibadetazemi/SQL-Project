@@ -24,12 +24,6 @@ Question 3: Is there any pattern in the types (product categories) of products o
 
 SQL Queries:
 
-SELECT *
- FROM products
- WHERE last_name LIKE 'All Countries', 'All cities%' 
-
-SELECT * FROM product WHERE name LIKE '%Canada', 'USA%';
-
 Answer:
 
 Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?
