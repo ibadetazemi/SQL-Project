@@ -16,6 +16,18 @@ Question 1: --Standarize sales date format:
 
 SQL Queries:
 
+SELECT SaleDate, CONVERT (Date, SaleDate)
+FROM Project.dbo.products
+
+ALTER TABLE Project.dbo.products
+ADD SaleDate2 Date
+
+UPDATE Project.dbo.products
+SET SaleDate2 = CONVERT (Date, SaleDate)
+
+SELECT SaleDate, SaleDate2
+FROM Project..products
+
 Answer: 
 
 
