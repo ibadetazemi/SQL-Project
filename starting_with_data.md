@@ -6,7 +6,7 @@ In the starting_with_data.md file, write 3 - 5 new questions that you could answ
 
 --At first glance, I realize what we need to do next:
 --1.Standarize sales date format
---2.Populate Property Address data
+--2.Populate Customer Address data
 --3.Break Address into individual columns (Address, City, State)
 --4.Change Y and N to YES and No in Column 'SoldAsVacant'
 --5.Remove Duplicates
@@ -20,7 +20,7 @@ Answer:
 
 
 
-Question 2: --Populate Property Address data:
+Question 2: --Populate Customer Address data:
 
 SQL Queries:
 
