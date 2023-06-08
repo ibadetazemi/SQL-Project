@@ -117,12 +117,50 @@ Question 5: --Remove Duplicates:
 
 SQL Queries:
 
+--First, we need to identify the duplicates
+with RowNumCTE as(
+Select *,
+ROW_NUMBER () over (
+Partition by ParcelID,
+CustomerAddress,
+LegalReference
+Order BY
+UniqueID
+) as row_num
+From Project..housing
+)
+Select*
+FROM RowNumCTE
+WHERE row_num>1
+
+--Let's delete them
+with RowNumCTE as(
+SELECT *,
+ROW_NUMBER () over (
+Partition by ParcelID,
+CustomerAddress,
+LegalReference
+Order BY
+UniqueID
+) as row_num
+From Customer..address
+)
+DELETE
+FROM RowNumCTE
+WHERE row_num>1
+
 Answer:
 
 
 Question 6: --Delete Unused Columns:
 
 SQL Queries:
+
+Select *
+FROM Customer..address
+
+Alter Table Customer..address
+DROP Column customerAddress, CustomerAddress, 
 
 Answer:
 
