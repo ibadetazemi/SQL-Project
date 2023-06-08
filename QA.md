@@ -7,7 +7,7 @@ What are your risk areas? Identify and describe them.
 Provide the SQL queries used to execute the QA process below:
 
 
- SQL Query QA Example: Lets check referential integrity between product and category table using categoryID
+ Checking referential integrity between product and category table using categoryID
 -----------------------------------------------------------------------------------------------------------
 
 -- union example from previous week
