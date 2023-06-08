@@ -67,9 +67,12 @@ WHERE
 
 Answer:
 
-Question 3: 
+Question 3: Can you find multiple data sources?
 
 SQL Queries:
+
+SELECT * FROM Customers
+WHERE Country IN (SELECT Country FROM Suppliers);
 
 Answer:
 
