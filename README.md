@@ -48,7 +48,7 @@ SELECT * FROM sales
 
 ---
 
-##Codes:
+##Website activity (Traffic to a site helps helps us to track website activity)
 
 
 SELECT
@@ -67,6 +67,8 @@ SELECT
    
    ORDER BY COUNT(DISTINCT Website_sessions.website_session_id)DESC;
    
+   ###Finding the conversion rates (If desktop performance is better than on mobile then desktop may provide more volumes)
+   
 SELECT
 
    Website_sessions. device_type.
@@ -84,6 +86,19 @@ WHERE Website_sessions.sku='brand/nonbrand'
    
 AND Website_sessions.created_at<'2012-05-11'
 GROUP BY Website_sessions.device type
+
+##Trend analysis (We can use trend analysis to help us see how far our business has come in the last 5 years. We can do trend analysis of sessions by week and year using date functions.)
+
+SELECT
+   YEAR(created_at)AS year,
+   YEAR(created_at)AS week,
+   MIN(DATE(created_at)) AS week_starts,
+   COUNT (DISTINCT website_session_id) AS sessions
+   
+FROM Website_sessions
+WHERE Website_sessions
+WHERE website_session_id BETWEEN 100000 AND 200000--Arbitrary
+GROUP BY YEAR (created_at), WEEK(created_at);
     
 ## Results
 (Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some patterns, some errors, duplicates etc.)
