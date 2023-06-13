@@ -11,8 +11,43 @@
 ### (Step 5: Clean outliers)
 ### (Step 6: Validate)
 
+
+SELECT
+   Website_sessions_sku,
+   Website_sessions_orderquantity,
+   Website_sessions_stocklevel,
+   COUNT (DISTINCT Website_sessions. website_sessions_id) AS sessions
+   COUNT (DISTINCT Orders, order_id) AS orders,
+   COUNT (DISTINCT Orders. order_id)/COUNT (DISTINCT Wbsite_sessions. website_sessions_id) *100 AS session_to_order_conversion_rate
+   
+   FROM Website_sessions
+      LEFT JOIN Orders
+         On Websire_sessions. website_session_id=Orders. website_session_id
+         
+   GROUP BY sku, orderquantity,stocklevel
+   
+   ORDER BY COUNT(DISTINCT Website_sessions.website_session_id)DESC;
+   
+SELECT
+
+   Website_sessions. device_type.
+   COUNT (DISTINCT Website_sessions.website_session_id) AS sessions,
+   COUNT (DISTINCT Orders. order_id) AS orders,
+   COUNT (DISTINCT Orders. order_id)/COUNT (DISTINCT Website_sessions. website_session_id) AS session_to_order_conversion_rate
+   
+FROM Website_sessions
+     LEFT JOIN Orders
+        ON Website_sessions. website_session_id=Orders.website_session_id
+        
+WHERE Website_sessions.sku='brand/nonbrand'
+   AND orderquantity='max'
+   AND stocklevel='max'
+   
+AND Website_sessions.created_at<'2012-05-11'
+GROUP BY Website_sessions.device type
+    
 ## Results
-(Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some errors, duplicates etc.)
+(Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some patterns, some errors, duplicates etc.)
 And how you used the data to answer those questions: I had used the data to answer these questions by analysing the data and interpreting the data)
 
 ## Challenges 
