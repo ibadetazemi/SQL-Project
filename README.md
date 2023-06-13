@@ -99,6 +99,24 @@ FROM Website_sessions
 WHERE Website_sessions
 WHERE website_session_id BETWEEN 100000 AND 200000--Arbitrary
 GROUP BY YEAR (created_at), WEEK(created_at);
+
+##Temporary table for entry page analysis (And join them with itself to get the most common entry page for a specific period)
+
+CREATE TEMPORARY TABLE first_pageview
+SELECT
+     website_session_id
+     MIN(website_pageview_id)AS first_page_visited_id
+FROM Website_pageviews
+WHERE website_pageview_id<1000--arbitrary
+GROUP BY website_session_id;
+SELECT
+    COUNT(DISTINCT(first_pageview. website_session_id)) AS sessions_hitting_this_lander,
+    Website_pageviews. pageview_url AS landing_page--or entry page
+    
+FROM first_pageview
+LEFT JOIN Website_pageviews
+   ON first_pageview.first_page_visited_id=Website_pageview_id
+GROUP BY Website_pageviews.pageview_url;
     
 ## Results
 (Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some patterns, some errors, duplicates etc.)
