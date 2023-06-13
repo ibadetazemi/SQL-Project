@@ -117,6 +117,31 @@ FROM first_pageview
 LEFT JOIN Website_pageviews
    ON first_pageview.first_page_visited_id=Website_pageview_id
 GROUP BY Website_pageviews.pageview_url;
+
+##Time On site: (This way we can check the time on site)
+
+ALTER TABLE analytics
+ALTER COLUMN timeonsite
+TYPE VARCHAR
+USING LPAD(timeonsite::VARCHAR, 6, '0');
+
+UPDATE analytics
+SET timeonsite = CONCAT(
+    SUBSTRING(timeonsite, 1, 2),
+    ':',
+    SUBSTRING(timeonsite, 3, 2),
+    ':',
+    SUBSTRING(timeonsite, 5, 2)
+);
+
+UPDATE analytics
+SET timeonsite = TIME '00:00:00' + 
+           INTERVAL '1 hour' * CAST(SUBSTR(timeonsite, 1, 2) AS INTEGER) +
+           INTERVAL '1 minute' * CAST(SUBSTR(timeonsite, 4, 2) AS INTEGER) +
+           INTERVAL '1 second' * CAST(SUBSTR(timeonsite, 7, 2) AS INTEGER);
+
+ALTER TABLE analytics
+ALTER COLUMN timeonsite TYPE TIME USING timeonsite::TIME;
     
 ## Results
 (Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some patterns, some errors, duplicates etc.)
