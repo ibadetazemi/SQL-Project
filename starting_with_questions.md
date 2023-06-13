@@ -15,7 +15,7 @@ ORDER BY c.STATE;
 
 
 
-Answer: USA + Toronto
+Answer: USA + California
 
 
 
@@ -55,7 +55,7 @@ WHERE Product LIKE 'All cities%, 'All countries%';
 SELECT * FROM Customers
 WHERE Products LIKE 'All cities%, 'All countries%';
 
-Answer: No pattern found
+Answer: Yes there is a patten
 
 
 
@@ -75,7 +75,7 @@ WHERE country IN ('Canada', 'USA')
 
 
 
-Answer: Personal care/food items, no worthy pattern found.
+Answer: Personal care/food items/handbags, no worthy pattern found.
 
 
 
@@ -89,7 +89,7 @@ SQL Queries:
  WHERE country IN ('All Countries', 'All cities') 
 
 
-Answer:
+Answer: A high revenue volume has been generated.
 
 
 
