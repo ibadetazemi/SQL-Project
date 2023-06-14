@@ -110,7 +110,7 @@ GROUP BY country, Rank
 
 
 
-Answer: Pe, yes a pattern was found.
+Answer: Dog frisbee, Google collapsible pet bowl, a pattern was not found.
 
 
 
