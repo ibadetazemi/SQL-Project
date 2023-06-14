@@ -142,6 +142,13 @@ SET timeonsite = TIME '00:00:00' +
 
 ALTER TABLE analytics
 ALTER COLUMN timeonsite TYPE TIME USING timeonsite::TIME;
+
+##Joining tables
+
+SELECT Visitors.VisitorName, Products.ProductsID
+FROM Visitors
+LEFT JOIN Orders ONVisitors.VisitorID = Orders.VisitorID
+ORDER BY Visitor.VisitorName;
     
 ## Results
 (Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some patterns, some errors, duplicates etc.)
