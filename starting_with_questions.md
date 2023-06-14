@@ -31,7 +31,7 @@ WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal')
 
 
 SELECT * FROM sales
-WHERE country IN ('Canada', 'USA') 
+WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal') 
  AND title = 'Products'
  AND city = 'All cities'
  AND country = 'All countries'
