@@ -21,7 +21,7 @@ Answer: USA (Atlanta, Sunnyvale, Los Angeles, Seattle), Isreal (Tel-Aviv-Yafo), 
 
 SQL Queries:
 
-SELECT AVG(productquantity) AS Avg_Product_Quantity, city, country
+SELECT ROUND(AVG(productquantity)) AS Avg_Product_Quantity, city, country
 FROM all_sessions
 WHERE city != 'not available in demo dataset' AND city IS NOT NULL
 GROUP BY productquantity, city, country
