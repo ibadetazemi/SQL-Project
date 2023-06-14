@@ -48,6 +48,10 @@ SELECT * FROM sales
 
 ---
 
+##Updating all_sessions to no longer null
+
+update all_sessions set city = NULL where city = '(not set)'
+
 ##Website activity (Traffic to a site helps helps us to track website activity)
 
 
