@@ -11,7 +11,7 @@ AS highest_level_of_transaction, currencycode, country, city, timeonsite FROM al
 
 
 
-Answer: USA (Atlanta, Sunnyvale, Los Angeles, Seattle), Isreal (Tel-Aviv-Yafo), Australia (Sydney)
+Answer: Country: USA City: (San Francisco)
 
 
 
