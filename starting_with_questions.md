@@ -110,7 +110,7 @@ GROUP BY country, Rank
 
 
 
-Answer: Home/Apparel/Men's/Men's T-Shirt, a pattern was not found.
+Answer: Home/Apparel/Men's/Men's T-Shirt. There is a pattern of home security products.
 
 
 
