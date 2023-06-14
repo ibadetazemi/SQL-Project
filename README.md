@@ -11,41 +11,8 @@
 ### (Step 5: Clean outliers)
 ### (Step 6: Validate)
 ### (Step 6: QA Process)
-
-Data cleaning steps:
-
-Remove irrelevant, redundant, or duplicate data:
-SELECT * FROM visitid LIMIT 200
-
-SELECT * FROM id WHERE country = 'Canada' SELECT DISTINCT * FROM persons
-
-SELECT userid, firstname FROM accounts SELECT DISTINCT(visitid), firstname FROM accounts
-
-SELECT / <1,000,000> FROM products [WHERE sales_report]
-
-Clean “structural” issues:
-SELECT id, name, email, year, country, IF(state IN ('Not Applicable', 'N/A'), NULL, state) AS state_clean FROM accounts
-
-3)Type conversion:
-
-SELECT CAST(birth_date AS DATE) AS birthdate FROM persons
-
-Clean missing data:
-SELECT * FROM sales WHERE salesid IS NULL
-
-SELECT * FROM userid WHERE year IS NOT NULL
-
-SELECT CASE WHEN year IS NULL THEN (SELECT AVG(year) FROM accounts),year) ELSE year END FROM accounts
-
-SELECT city, region FROM accounts GROUP BY city, region
-
-COALESCE(products, company, 'missing')
-
-Clean outliers:
-SELECT age FROM accounts WHERE age >= 18 AND age <= 99
-
-Validate:
-SELECT * FROM sales
+### (Step 7: Results)
+### (Step 8: Conclusion)
 
 ---
 
