@@ -98,7 +98,7 @@ Answer: No discounts were found
 
 SELECT  MAX(Sales_by_sku) FROM Visit;
 
-Answer: Max = 50
+Answer: Max = 1
 
 
 
