@@ -109,7 +109,7 @@ WHERE country IN ('Canada', 'USA', 'Australia', 'Isreal')
 
 
 
-Answer: Personal care/food items/handbags, no worthy pattern found.
+Answer: Personal care/food items/handbags, yes a pattern was found.
 
 
 
