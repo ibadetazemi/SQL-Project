@@ -21,6 +21,12 @@ Answer: USA (Atlanta, Sunnyvale, Los Angeles, Seattle), Isreal (Tel-Aviv-Yafo), 
 
 SQL Queries:
 
+SELECT a.country, a.city, cast(AVG(an.units_sold) as decimal(10,2)) AS averageProductCount
+FROM all_sessions AS a
+JOIN analytics AS an ON a.visitId = an.visitId
+where units_sold is not null
+GROUP BY a.country, a.city;
+
 SELECT *
 FROM products
 WHERE UPPER(quantityperunit) LIKE '%PIECES%'
@@ -36,7 +42,7 @@ WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal')
  AND city = 'All cities'
  AND country = 'All countries'
 
-Answer: 10
+Answer: 10+
 
 
 
@@ -47,10 +53,10 @@ Answer: 10
 
 SQL Queries:
 
-SELECT * FROM Customers
+SELECT * FROM visitid
 WHERE Product LIKE 'All cities%, 'All countries%';
 
-SELECT * FROM Customers
+SELECT * FROM visitid
 WHERE Products LIKE 'All cities%, 'All countries%';
 
 Answer: Yes there is a patten
@@ -67,7 +73,7 @@ SQL Queries:
 SELECT MAX(products)
 FROM sales
 WHERE top-selling;
-WHERE country IN ('Canada', 'USA') 
+WHERE country IN ('Canada', 'USA', 'Australia', 'Isreal') 
  AND title = 'Products'
  AND city = 'All cities'
 
