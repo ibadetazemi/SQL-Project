@@ -42,7 +42,7 @@ WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal')
  AND city = 'All cities'
  AND country = 'All countries'
 
-Answer: 10+
+Answer: 1
 
 
 
