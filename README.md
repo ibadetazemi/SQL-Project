@@ -48,79 +48,27 @@ SELECT * FROM sales
 
 ---
 
+##Alter table 
+
+ALTER TABLE analytics ALTER COLUMN timeonsite TYPE VARCHAR USING LPAD(timeonsite::VARCHAR, 6, '0');
+
+##Update time on site
+
+UPDATE analytics SET timeonsite = CONCAT( SUBSTRING(timeonsite, 1, 2), ':', SUBSTRING(timeonsite, 3, 2), ':', SUBSTRING(timeonsite, 5, 2) );
+
+##Update time on site
+
+UPDATE analytics SET timeonsite = TIME '00:00:00' + INTERVAL '1 hour' * CAST(SUBSTR(timeonsite, 1, 2) AS INTEGER) + INTERVAL '1 minute' * CAST(SUBSTR(timeonsite, 4, 2) AS INTEGER) + INTERVAL '1 second' * CAST(SUBSTR(timeonsite, 7, 2) AS INTEGER);
+
+##Alter table
+
+ALTER TABLE analytics ALTER COLUMN timeonsite TYPE TIME USING timeonsite::TIME;
+
+
 ##Updating all_sessions to no longer null
 
 update all_sessions set city = NULL where city = '(not set)'
 
-##Website activity (Traffic to a site helps helps us to track website activity)
-
-
-SELECT
-   Website_sessions_sku,
-   Website_sessions_orderquantity,
-   Website_sessions_stocklevel,
-   COUNT (DISTINCT Website_sessions. website_sessions_id) AS sessions
-   COUNT (DISTINCT Orders, order_id) AS orders,
-   COUNT (DISTINCT Orders. order_id)/COUNT (DISTINCT Wbsite_sessions. website_sessions_id) *100 AS session_to_order_conversion_rate
-   
-   FROM Website_sessions
-      LEFT JOIN Orders
-         On Websire_sessions. website_session_id=Orders. website_session_id
-         
-   GROUP BY sku, orderquantity,stocklevel
-   
-   ORDER BY COUNT(DISTINCT Website_sessions.website_session_id)DESC;
-   
-   ###Finding the conversion rates (If desktop performance is better than on mobile then desktop may provide more volumes)
-   
-SELECT
-
-   Website_sessions. device_type.
-   COUNT (DISTINCT Website_sessions.website_session_id) AS sessions,
-   COUNT (DISTINCT Orders. order_id) AS orders,
-   COUNT (DISTINCT Orders. order_id)/COUNT (DISTINCT Website_sessions. website_session_id) AS session_to_order_conversion_rate
-   
-FROM Website_sessions
-     LEFT JOIN Orders
-        ON Website_sessions. website_session_id=Orders.website_session_id
-        
-WHERE Website_sessions.sku='brand/nonbrand'
-   AND orderquantity='max'
-   AND stocklevel='max'
-   
-AND Website_sessions.created_at<'2012-05-11'
-GROUP BY Website_sessions.device type
-
-##Trend analysis (Using trend analysis to help see how far ecommerce business has come in the last 5 years)
-
-SELECT
-   YEAR(created_at)AS year,
-   YEAR(created_at)AS week,
-   MIN(DATE(created_at)) AS week_starts,
-   COUNT (DISTINCT website_session_id) AS sessions
-   
-FROM Website_sessions
-WHERE Website_sessions
-WHERE website_session_id BETWEEN 100000 AND 200000--Arbitrary
-GROUP BY YEAR (created_at), WEEK(created_at);
-
-##Temporary table for entry page analysis (And join them with itself to get the most common entry page for a specific period)
-
-CREATE TEMPORARY TABLE first_pageview
-SELECT
-     website_session_id
-     MIN(website_pageview_id)AS first_page_visited_id
-FROM Website_pageviews
-WHERE website_pageview_id<1000--arbitrary
-GROUP BY website_session_id;
-SELECT
-    COUNT(DISTINCT(first_pageview. website_session_id)) AS sessions_hitting_this_lander,
-    Website_pageviews. pageview_url AS landing_page--or entry page
-    
-FROM first_pageview
-LEFT JOIN Website_pageviews
-   ON first_pageview.first_page_visited_id=Website_pageview_id
-GROUP BY Website_pageviews.pageview_url;
 
 ##Time On site: (Checking the time on site)
 
