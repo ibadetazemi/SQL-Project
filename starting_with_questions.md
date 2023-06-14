@@ -6,12 +6,8 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 SQL Queries:
 
-SELECT c.STATE, c.CITY, SUM(s.QTY * s.SALEPRICE)
-FROM SALE s
-INNER JOIN CUST c
-ON s.custid = c.custid
-GROUP BY c.STATE, c.CITY
-ORDER BY c.STATE;
+SELECT SUM(totaltransactionrevenue)
+AS highest_level_of_transaction, currencycode, country, city, timeonsite FROM all_sessions WHERE totaltransactionrevenue IS NOT NULL AND city !='not available in demo dataset' GROUP BY totaltransactionrevenue, currencycode, city, country, timeonsite ORDER BY totaltransactionrevenue DESC
 
 
 
