@@ -69,6 +69,36 @@ Answer: Yes there is a patten
 
 
 SQL Queries:
+WITH SalesData AS (
+  SELECT Customers.City, Customers.Country, Products.ProductName,
+         order_details.UnitPrice * order_details.Quantity AS SalesAmount
+  FROM Customers
+  INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+  INNER JOIN order_details ON Orders.OrderID = order_details.OrderID
+  INNER JOIN Products ON order_details.ProductID = Products.ProductID
+),
+AggregatedSales as (
+  SELECT City, Country, ProductName, SUM(SalesAmount) AS TotalSales
+  FROM SalesData
+  GROUP BY City, Country, ProductName
+)
+
+WITH ranked_products as (
+SELECT 
+    als.country, 
+    p.name, 
+    RANK() OVER (PARTITION BY als.country ORDER BY ana.units_sold DESC) as rank
+FROM all_sessions as als
+JOIN analytics as ana ON als.visitid = ana.visitid
+JOIN products as p ON als.productsku = p.sku
+GROUP BY als.country, p.name, ana.units_sold
+ORDER BY UNITS_SOLD
+)
+
+SELECT country, rank
+FROM ranked_products 
+GROUP BY country, Rank
+
 
 SELECT MAX(products)
 FROM sales
