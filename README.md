@@ -1,7 +1,7 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-(To create and analyze sales performance report + to analyze and clean data + find risk areas, identifying potential issues)
+(To create and analyze total revenue generated, sales performance report + to analyze and clean data + find risk areas, identify potential issues + to understand the website visitor buying behaviour, time spent on site and product category.)
 
 ## Process
 ### (Step 1: Remove irrelevant, redundant, or duplicate data)
