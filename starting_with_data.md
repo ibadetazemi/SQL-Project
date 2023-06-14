@@ -14,10 +14,10 @@ INNER JOIN Orders ON Visitors.VisitorID = Orders.VisitID
 INNER JOIN order_details ON Orders.OrderID = order_details.OrderID
 GROUP BY Visitor.VisitID;
 
-Answer:
+Answer: 1
 
 
-Question 2: Calculate the total sales for each visitor
+Question 2: What is the total number of sales for each visitor
 
 SQL Queries:
 
@@ -27,13 +27,19 @@ INNER JOIN Orders ON Visitors.CustomerID = Orders.VisitorID
 INNER JOIN order_details ON Orders.OrderID = order_details.OrderID
 GROUP BY Visitors.VisitID;
 
-Answer:
+Answer: 1
 
 
-Question 3:
+Question 3: What is the total amount of revenue for each category of a product.
 
 SQL Queries:
 
-Answer:
+SELECT Categories.CategoryName, SUM(order_details.UnitPrice * order_details.Quantity) AS TotalRevenue
+FROM Categories
+INNER JOIN Products ON Categories.CategoryID = Products.CategoryID
+INNER JOIN order_details ON Products.ProductID = order_details.ProductID
+GROUP BY Categories.CategoryName;
+
+Answer: 10+
 
 
