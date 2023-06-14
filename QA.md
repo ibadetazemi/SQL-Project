@@ -18,9 +18,9 @@ WHERE table_schema = 'public';
 
 --Checking for column data types + nullability for the products table--
 
-SELECT column_name, data_type, is_nullable
+SELECT products, data_type, is_nullable
 FROM information_schema.columns
-WHERE table_name = 'visitors';
+WHERE products = 'visitors';
 
 
 --Count unique values for the country column in the sales_by_sku table--
@@ -49,7 +49,7 @@ GROUP BY productsid
 HAVING COUNT(*) > 1;
 
 
-Answer: No missing data + no duplicates found
+Answer: Missing data + duplicates found
 
 Task 3: Data Cleansing
 
@@ -62,7 +62,7 @@ SET country = regexp_replace(country, '[^a-z]', '', 'g')
 WHERE country LIKE '%(%-%) %-%';
 
 --Standardize the country names in the products table--
-UPDATE visitora
+UPDATE visitors
 SET country = CASE
     WHEN country IN ('CA', 'Canada', 'Australia', 'Isreal') THEN 'United States'
     WHEN country = 'USA' THEN 'United States'
@@ -82,13 +82,13 @@ FROM orders
 WHERE orderdate < '2023-06-01';
 
 
---Test that the discount amounts in the sales_report table are accurate--
+--Test that the discount amounts in the sales_by_sku table are accurate--
 
 Queries:
 
-SELECT orderid, SUM(unitprice * quantity * (1 - discount)) AS total_discount
-FROM order_details
-GROUP BY orderid
+SELECT productssku, SUM(unitprice * quantity * (1 - discount)) AS total_discount
+FROM totalOrdered
+GROUP BY productssku
 HAVING SUM(unitprice * quantity * (1 - discount)) < 0;
 
 Answer: No discounts were found
