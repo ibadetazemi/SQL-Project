@@ -59,7 +59,7 @@ Answer: 1
 
 SQL Queries:
 
-SELECT * FROM visitid
+SELECT * FROM categoryid
 WHERE Product LIKE 'All cities%, 'All countries%';
 
 SELECT * FROM visitid
