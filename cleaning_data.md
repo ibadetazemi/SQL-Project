@@ -26,6 +26,24 @@ SELECT <sales> / <1,000,000>
 FROM products
 [WHERE sales_report]
 
+update all_sessions 
+set city = NULL
+where city = '(not set)'
+
+ALTER TABLE analytics
+ALTER COLUMN timeonsite
+TYPE VARCHAR
+USING LPAD(timeonsite::VARCHAR, 6, '0');
+
+UPDATE analytics
+SET timeonsite = CONCAT(
+    SUBSTRING(timeonsite, 1, 2),
+    ':',
+    SUBSTRING(timeonsite, 3, 2),
+    ':',
+    SUBSTRING(timeonsite, 5, 2)
+);
+
 2) Clean “structural” issues:
 
 SELECT id, name, email, year, country,
