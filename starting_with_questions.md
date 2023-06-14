@@ -21,6 +21,12 @@ Answer: USA (Atlanta, Sunnyvale, Los Angeles, Seattle), Isreal (Tel-Aviv-Yafo), 
 
 SQL Queries:
 
+SELECT AVG(productquantity) AS Avg_Product_Quantity, city, country
+FROM all_sessions
+WHERE city != 'not available in demo dataset' AND city IS NOT NULL
+GROUP BY productquantity, city, country
+ORDER BY productquantity
+
 SELECT a.country, a.city, cast(AVG(an.units_sold) as decimal(10,2)) AS averageProductCount
 FROM all_sessions AS a
 JOIN analytics AS an ON a.visitId = an.visitId
