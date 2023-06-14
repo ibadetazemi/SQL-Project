@@ -16,7 +16,7 @@ FROM information_schema.tables
 WHERE table_schema = 'public';
 
 
---Get column data types and nullability for the products table--
+--Checking for column data types + nullability for the products table--
 
 SELECT column_name, data_type, is_nullable
 FROM information_schema.columns
@@ -34,14 +34,15 @@ Task 2: Data Validation
 
 Queries:
 
---Check for missing data in the sales_report table--
+--Checking for missing data in the sales_report table--
 
 SELECT *
 FROM sales_report
 WHERE quantity IS NULL;
 
 
---Check for duplicate data in the products table--
+--Checking for duplicate data in the products table--
+
 SELECT productsid, COUNT(*)
 FROM products
 GROUP BY productsid
