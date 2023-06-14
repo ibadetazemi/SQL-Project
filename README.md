@@ -151,12 +151,12 @@ LEFT JOIN Orders ONVisitors.VisitorID = Orders.VisitorID
 ORDER BY Visitor.VisitorName;
     
 ## Results
-(Fill in what you discovered this data could tell you: What I had discovered with this data is that it had contained a very large amounts of products and sales and took some time to clean and filter the data and it had contained some patterns, some errors, duplicates etc.)
-And how you used the data to answer those questions: I had used the data to answer these questions by analysing the data and interpreting the data)
+(Fill in what you discovered this data could tell you: What I had discovered with this data is that it was not clean data, it took some time to re-organize the data and transform the data and clean/filter the data. It was challenging to manually add the columns and then try to apply different queries to adhere to each column. And USA made the most revenue.)
+And how you used the data to answer those questions: I had used the data to answer these questions by analyzing the data and interpreting the data)
 
 ## Challenges 
-(Some challenges that I had experienced include: Missing values, Inconsistent data that creates confusion, incorrect data, value entered in the wrong field, Errors in domain format and missing values.)
+(Some challenges that I had experienced include: Null values, having to change time, and having to manually add columns as well as numerous transformations and data cleaning. There was also missing values, Inconsistent data that creates confusion, incorrect data, value entered in the wrong field, Errors in columns/tables and missing/null values. The PGAdmin app also crashes and the lack/limited data for the columns.)
 
 ## Future Goals
 (What would you do if you had more time?)
-(Answer: If I had more time I would go more in depth with the data cleaning process and educate others about what I had learned and try to learn more.)
+(Answer: If I had more time I would go more in-depth with the data cleaning process, transformations, troubleshooting, and educate others about what I had learned and try to learn more.)
