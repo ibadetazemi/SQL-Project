@@ -44,6 +44,15 @@ SET timeonsite = CONCAT(
     SUBSTRING(timeonsite, 5, 2)
 );
 
+UPDATE analytics
+SET timeonsite = TIME '00:00:00' + 
+           INTERVAL '1 hour' * CAST(SUBSTR(timeonsite, 1, 2) AS INTEGER) +
+           INTERVAL '1 minute' * CAST(SUBSTR(timeonsite, 4, 2) AS INTEGER) +
+           INTERVAL '1 second' * CAST(SUBSTR(timeonsite, 7, 2) AS INTEGER);
+
+ALTER TABLE analytics
+ALTER COLUMN timeonsite TYPE TIME USING timeonsite::TIME;
+
 2) Clean “structural” issues:
 
 SELECT id, name, email, year, country,
