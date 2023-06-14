@@ -15,7 +15,7 @@ ORDER BY c.STATE;
 
 
 
-Answer: USA + California
+Answer: USA (Atlanta, Sunnyvale, Los Angeles, Seattle), Isreal (Tel-Aviv-Yafo), Australia (Sydney)
 
 
 
