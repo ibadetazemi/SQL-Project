@@ -33,20 +33,6 @@ JOIN analytics AS an ON a.visitId = an.visitId
 where units_sold is not null
 GROUP BY a.country, a.city;
 
-SELECT *
-FROM products
-WHERE UPPER(quantityperunit) LIKE '%PIECES%'
-WHERE country IN ('All countries') 
- AND title = 'Products'
- AND city = 'All cities'
- AND country = 'All countries'
-
-
-SELECT * FROM sales
-WHERE country IN ('All countries') 
- AND title = 'Products'
- AND city = 'All cities'
- AND country = 'All countries'
 
 Answer: 1
 
@@ -124,7 +110,7 @@ GROUP BY country, Rank
 
 
 
-Answer: Personal care/food items/handbags, yes a pattern was found.
+Answer: Pe, yes a pattern was found.
 
 
 
