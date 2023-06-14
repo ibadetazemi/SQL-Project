@@ -155,7 +155,7 @@ ORDER BY Visitor.VisitorName;
 And how you used the data to answer those questions: I had used the data to answer these questions by analysing the data and interpreting the data)
 
 ## Challenges 
-(Some challenges that I had experienced include: Inconsistent data that creates confusion, incorrect data, value entered in the wrong field, Errors in domain format and missing values.)
+(Some challenges that I had experienced include: Missing values, Inconsistent data that creates confusion, incorrect data, value entered in the wrong field, Errors in domain format and missing values.)
 
 ## Future Goals
 (What would you do if you had more time?)
