@@ -151,7 +151,7 @@ LEFT JOIN Orders ONVisitors.VisitorID = Orders.VisitorID
 ORDER BY Visitor.VisitorName;
     
 ## Results
-(Fill in what you discovered this data could tell you: What I had discovered with this data is that it was not clean data, it took some time to re-organize the data and transform the data and clean/filter the data. It was challenging to manually add the columns and then try to apply different queries to adhere to each column. And USA made the most revenue and organic search was the highest lead.)
+(Fill in what you discovered this data could tell you: What I had discovered with this data is that it was not clean data, it took some time to re-organize the data and transform the data and clean/filter the data. It was challenging to manually add the columns and then try to apply different queries to adhere to each column. And USA made the most revenue and organic search was the highest lead. There was no clear pattern on time spent on site.)
 And how you used the data to answer those questions: I had used the data to answer these questions by analyzing the data and interpreting the data)
 
 ## Challenges 
