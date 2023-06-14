@@ -30,6 +30,15 @@ FROM sales_by_sku;
 
 Answer: 5
 
+--Checking to see if foreign key + primary key match--
+
+SELECT p.productsku, al.productsku
+FROM products_new p
+INNER JOIN all_sessions_new al
+USING(productsku)
+
+Answer: Yes foreign keys do not match
+
 Task 2: Data Validation
 
 Queries:
