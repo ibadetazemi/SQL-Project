@@ -53,11 +53,6 @@ SET timeonsite = TIME '00:00:00' +
 ALTER TABLE analytics
 ALTER COLUMN timeonsite TYPE TIME USING timeonsite::TIME;
 
-SELECT a.country, a.city, cast(AVG(an.units_sold) as decimal(10,2)) AS averageProductCount
-FROM all_sessions AS a
-JOIN analytics AS an ON a.visitId = an.visitId
-where units_sold is not null
-GROUP BY a.country, a.city;
 
 2) Clean “structural” issues:
 
