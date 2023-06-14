@@ -59,6 +59,22 @@ Answer: 1
 
 SQL Queries:
 
+SELECT
+    a.country as country,
+    a.city as city,
+    a.v2ProductCategory as productcategory,
+    SUM(an.units_sold) as totalUnitsSold
+FROM all_sessions AS a
+JOIN analytics AS an ON a.visitId = an.visitId
+JOIN products AS p ON a.productSKU = p.SKU
+WHERE a.country != '(not set)'
+    AND a.city != '(not set)'
+    AND a.v2ProductCategory != '(not set)'
+GROUP BY a.country, a.city, a.v2ProductCategory
+HAVING SUM(an.units_sold) IS NOT NULL
+ORDER BY a.country, a.city, totalUnitsSold DESC
+
+
 select city, country, v2productcategory, count(v2productcategory) as categ
 from all_sessions
 where city is not NULL and city != 'not available in demo dataset'
