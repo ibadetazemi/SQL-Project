@@ -122,12 +122,12 @@ with RowNumCTE as(
 Select *,
 ROW_NUMBER () over (
 Partition by ParcelID,
-CustomerAddress,
+VisitorAddress,
 LegalReference
 Order BY
 UniqueID
 ) as row_num
-From Project..housing
+From Visitor..address
 )
 Select*
 FROM RowNumCTE
@@ -137,13 +137,13 @@ WHERE row_num>1
 with RowNumCTE as(
 SELECT *,
 ROW_NUMBER () over (
-Partition by ParcelID,
-CustomerAddress,
+Partition by skuID,
+VisitorAddress,
 LegalReference
 Order BY
 UniqueID
 ) as row_num
-From Customer..address
+From Visitor..address
 )
 DELETE
 FROM RowNumCTE
@@ -157,10 +157,10 @@ Question 6: --Delete Unused Columns:
 SQL Queries:
 
 Select *
-FROM Customer..address
+FROM visitor..address
 
-Alter Table Customer..address
-DROP Column customerAddress, CustomerAddress, 
+Alter Table Visitor..address
+DROP Column visitorAddress, VisitorAddress, 
 
 Answer: Some unused columns were found.
 
