@@ -87,7 +87,7 @@ WHERE Website_sessions.sku='brand/nonbrand'
 AND Website_sessions.created_at<'2012-05-11'
 GROUP BY Website_sessions.device type
 
-##Trend analysis (Using trend analysis to help see how far a business has come in the last 5 years)
+##Trend analysis (Using trend analysis to help see how far ecommerce business has come in the last 5 years)
 
 SELECT
    YEAR(created_at)AS year,
@@ -118,7 +118,7 @@ LEFT JOIN Website_pageviews
    ON first_pageview.first_page_visited_id=Website_pageview_id
 GROUP BY Website_pageviews.pageview_url;
 
-##Time On site: (This way we can check the time on site)
+##Time On site: (Checking the time on site)
 
 ALTER TABLE analytics
 ALTER COLUMN timeonsite
