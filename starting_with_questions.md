@@ -127,6 +127,13 @@ SQL Queries:
   totalTransactions
   FROM all_sessions
   GROUP BY city, country;
+
+  SELECT country, city, SUM(totalTransactionRevenue) AS total_revenue
+FROM all_sessions
+WHERE country in ('United States', 'Israel', 'Australia')
+GROUP BY country, city
+HAVING SUM(totalTransactionRevenue) >= 0
+ORDER BY total_revenue DESC
   
 
 
