@@ -10,6 +10,7 @@
 ### (Step 4: Clean missing data)
 ### (Step 5: Clean outliers)
 ### (Step 6: Validate)
+### (Step 6: QA Process)
 
 Data cleaning steps:
 
