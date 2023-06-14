@@ -20,7 +20,7 @@ WHERE table_schema = 'public';
 
 SELECT column_name, data_type, is_nullable
 FROM information_schema.columns
-WHERE table_name = 'customers';
+WHERE table_name = 'visitors';
 
 
 --Count unique values for the country column in the sales_by_sku table--
@@ -61,9 +61,9 @@ SET country = regexp_replace(country, '[^a-z]', '', 'g')
 WHERE country LIKE '%(%-%) %-%';
 
 --Standardize the country names in the products table--
-UPDATE customers
+UPDATE visitora
 SET country = CASE
-    WHEN country IN ('CA', 'Canada') THEN 'United States'
+    WHEN country IN ('CA', 'Canada', 'Australia', 'Isreal') THEN 'United States'
     WHEN country = 'USA' THEN 'United States'
     ELSE country
     END;
