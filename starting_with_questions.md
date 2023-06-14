@@ -27,12 +27,14 @@ WHERE UPPER(quantityperunit) LIKE '%PIECES%'
 WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal') 
  AND title = 'Products'
  AND city = 'All cities'
+ AND country = 'All countries'
 
 
 SELECT * FROM sales
 WHERE country IN ('Canada', 'USA') 
  AND title = 'Products'
  AND city = 'All cities'
+ AND country = 'All countries'
 
 Answer: 10
 
