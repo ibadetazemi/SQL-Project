@@ -87,7 +87,7 @@ WHERE Website_sessions.sku='brand/nonbrand'
 AND Website_sessions.created_at<'2012-05-11'
 GROUP BY Website_sessions.device type
 
-##Trend analysis (We can use trend analysis to help us see how far our business has come in the last 5 years. We can do trend analysis of sessions by week and year using date functions.)
+##Trend analysis (Using trend analysis to help see how far a business has come in the last 5 years)
 
 SELECT
    YEAR(created_at)AS year,
