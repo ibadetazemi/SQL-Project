@@ -68,7 +68,7 @@ and v2productcategory != '(not set)' and v2productcategory != '${escCatTitle}'
 group by v2productcategory,city, country
 order by categ desc;
 
-Answer: Yes there is a patten
+Answer: Yes there is a pattern there was lots of Google products, pet products, men's products and electronics.
 
 
 
