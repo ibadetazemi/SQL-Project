@@ -130,7 +130,7 @@ SQL Queries:
   
 
 
-Answer: San Francisco.
+Answer: USA - San Francisco has the highest revenue.
 
 
 
