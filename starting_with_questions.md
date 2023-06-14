@@ -24,7 +24,7 @@ SQL Queries:
 SELECT *
 FROM products
 WHERE UPPER(quantityperunit) LIKE '%PIECES%'
-WHERE country IN ('Canada', 'USA') 
+WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal') 
  AND title = 'Products'
  AND city = 'All cities'
 
