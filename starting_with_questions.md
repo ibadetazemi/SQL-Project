@@ -59,11 +59,12 @@ Answer: 1
 
 SQL Queries:
 
-SELECT * FROM categoryid
-WHERE Product LIKE 'All cities%, 'All countries%';
-
-SELECT * FROM visitid
-WHERE Products LIKE 'All cities%, 'All countries%';
+select city, country, v2productcategory, count(v2productcategory) as categ
+from all_sessions
+where city is not NULL and city != 'not available in demo dataset'
+and v2productcategory != '(not set)' and v2productcategory != '${escCatTitle}'
+group by v2productcategory,city, country
+order by categ desc;
 
 Answer: Yes there is a patten
 
