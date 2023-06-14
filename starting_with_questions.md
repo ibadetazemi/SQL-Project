@@ -30,14 +30,14 @@ GROUP BY a.country, a.city;
 SELECT *
 FROM products
 WHERE UPPER(quantityperunit) LIKE '%PIECES%'
-WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal') 
+WHERE country IN ('All countries') 
  AND title = 'Products'
  AND city = 'All cities'
  AND country = 'All countries'
 
 
 SELECT * FROM sales
-WHERE country IN ('Canada', 'USA, 'Austrailia', 'Isreal') 
+WHERE country IN ('All countries') 
  AND title = 'Products'
  AND city = 'All cities'
  AND country = 'All countries'
@@ -100,14 +100,6 @@ FROM ranked_products
 GROUP BY country, Rank
 
 
-SELECT MAX(products)
-FROM sales
-WHERE top-selling;
-WHERE country IN ('Canada', 'USA', 'Australia', 'Isreal') 
- AND title = 'Products'
- AND city = 'All cities'
-
-
 
 Answer: Personal care/food items/handbags, yes a pattern was found.
 
@@ -119,11 +111,17 @@ Answer: Personal care/food items/handbags, yes a pattern was found.
 
 SQL Queries:
 
- ( current month revenue - previous month revenue)/previous month revenue * 100.
- WHERE country IN ('All Countries', 'All cities') 
+ SELECT city, country,
+    SUM(totaltotalTransactionRevenue)AS
+  totalRevenue,
+    COUNT(DISTINCT "transactionId")AS
+  totalTransactions
+  FROM all_sessions
+  GROUP BY city, country;
+  
 
 
-Answer: A high revenue volume has been generated.
+Answer: San Francisco.
 
 
 
