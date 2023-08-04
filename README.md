@@ -16,10 +16,10 @@
 ### (Step 9: Future Goals)
 
 ## (Part 1: Loading csv Files into Database)
-Create a database called Ecommerce then create tables/columns/details for each column/alter column + import csv
+I had created a database called Ecommerce then create tables/columns/added details for each column/alter column + import csv.
 
 ## (Part 2:  Data Cleaning)  
- Remove irrelevant, redundant, or duplicate data, Clean “structural” issues, Type conversion, Clean missing data, Clean outliers, Validate
+I had removed: (irrelevant, redundant, or duplicate data, Clean “structural” issues, Type conversion, Clean missing data, Clean outliers, Validate).
 
 ---
 
