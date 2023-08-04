@@ -5,7 +5,8 @@
 
 ## Process
 ### (Step 1: Loading csv Files into Database)
-### (Step 2: Remove irrelevant, redundant, or duplicate data)
+### (Step 2: Data Cleaning)
+### (Step 3: Remove irrelevant, redundant, or duplicate data)
 ### (Step 3: Clean “structural” issues)
 ### (Step 4: Type conversion)
 ### (Step 5: Clean missing data)
