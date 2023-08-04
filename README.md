@@ -3,6 +3,15 @@
 ## Project/Goals
 (To create and analyze total revenue generated, sales performance report + to analyze and clean data + find risk areas, identify potential issues + to understand the website visitor buying behaviour, time spent on site and product category.)
 
+## (Part 1) 
+Create a database called Ecommerce then create tables/columns/details for each column/alter column + import csv
+
+## (Part 2)  
+Starting with questions
+
+## (Part 3)  
+
+
 ## Process
 ### (Step 1: Remove irrelevant, redundant, or duplicate data)
 ### (Step 2: Clean “structural” issues)
