@@ -4,22 +4,26 @@
 (To create and analyze total revenue generated, sales performance report + to analyze and clean data + find risk areas, identify potential issues + to understand the website visitor buying behaviour, time spent on site and product category.)
 
 ## Process
-### (Step 1: Remove irrelevant, redundant, or duplicate data)
-### (Step 2: Clean “structural” issues)
-### (Step 3: Type conversion)
-### (Step 4: Clean missing data)
-### (Step 5: Clean outliers)
-### (Step 6: Validate)
-### (Step 6: QA Process)
-### (Step 7: Results)
-### (Step 8: Conclusion)
-### (Step 9: Future Goals)
+### (Step 1: Loading csv Files into Database)
+### (Step 2: Remove irrelevant, redundant, or duplicate data)
+### (Step 3: Clean “structural” issues)
+### (Step 4: Type conversion)
+### (Step 5: Clean missing data)
+### (Step 6: Clean outliers)
+### (Step 7: Validate)
+### (Step 8: QA Process)
+### (Step 8: Results)
+### (Step 9: Conclusion)
+### (Step 10: Future Goals)
 
 ## (Part 1: Loading csv Files into Database)
-I had created a database called Ecommerce then create tables/columns/added details for each column/alter column + import csv.
+I had created a database first, then I had created tables/columns and I had also added details for each column/alter column + import csv.
 
 ## (Part 2:  Data Cleaning)  
-I had removed: (irrelevant, redundant, or duplicate data, Clean “structural” issues, Type conversion, Clean missing data, Clean outliers, Validate).
+I had took these steps to clean data: removed: (irrelevant, redundant, or duplicate data, Clean “structural” issues, Type conversion, Clean missing data, Clean outliers, Validate).
+
+## (Part 3: Starting with Questions)
+I had answered the 5 questions as well as included the querry used that shows the steps I took to get the answer.
 
 ---
 
