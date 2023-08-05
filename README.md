@@ -36,6 +36,12 @@ I had answered the 5 questions as well as included the querry used that shows th
 ## (Part 4: Starting with Data)
 I had created and answered 3 questions that could help with the database.
 
+## (Part 5: QA Your Data)
+I had used a variety of codes and steps for my QA process to identify risk areas.
+
+## (Part 6: Generate the ERDLoading Your Final Table Into PostgreSQL Database)
+I had generated an ERD for my database.
+
 ---
 
 ##Alter table 
