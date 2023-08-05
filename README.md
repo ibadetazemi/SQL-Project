@@ -20,6 +20,11 @@
 ## (Part 1: Loading csv Files into Database)
 I had created a database first, then I had created tables/columns and I had also added details for each column/alter column + import csv.
 
+COPY characters
+FROM '/Users/ibadetazemi/Desktop/Data Science/northwind 2/restore.sql'
+DELIMITER ','
+CSV HEADER;
+
 ## (Part 2:  Data Cleaning)  
 I had took these steps to clean data: removed: (irrelevant, redundant, or duplicate data, Clean “structural” issues, Type conversion, Clean missing data, Clean outliers, Validate).
 
