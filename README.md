@@ -6,6 +6,8 @@
 ## Process
 ### (Step 1: Loading csv Files into Database)
 ### (Step 2: Data Cleaning)
+##  (Part 3: Starting with Questions)
+### (Step 4: Starting with Data)
 ### (Step 3: Remove irrelevant, redundant, or duplicate data)
 ### (Step 3: Clean “structural” issues)
 ### (Step 4: Type conversion)
@@ -21,7 +23,7 @@
 I had created a database first, then I had created tables/columns and I had also added details for each column/alter column + import csv.
 
 COPY characters
-FROM '/Users/ibadetazemi/Desktop/Data Science/northwind 2/restore.sql'
+FROM ''
 DELIMITER ','
 CSV HEADER;
 
@@ -30,6 +32,9 @@ I had took these steps to clean data: removed: (irrelevant, redundant, or duplic
 
 ## (Part 3: Starting with Questions)
 I had answered the 5 questions as well as included the querry used that shows the steps I took to get the answer.
+
+## (Part 4: Starting with Data)
+I had created and answered 3 questions that could help with the database.
 
 ---
 
