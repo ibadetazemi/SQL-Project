@@ -8,27 +8,17 @@
 ### (Step 2: Data Cleaning)
 ##  (Part 3: Starting with Questions)
 ### (Step 4: Starting with Data)
-### (Step 3: Remove irrelevant, redundant, or duplicate data)
-### (Step 3: Clean “structural” issues)
-### (Step 4: Type conversion)
-### (Step 5: Clean missing data)
-### (Step 6: Clean outliers)
-### (Step 7: Validate)
-### (Step 8: QA Process)
-### (Step 8: Results)
-### (Step 9: Conclusion)
-### (Step 10: Future Goals)
+### (Step 5: QA Process)
+### (Part 6: Generate ERD)
+### (Step 6: Results)
+### (Step 7: Conclusion)
+### (Step 8: Future Goals)
 
 ## (Part 1: Loading csv Files into Database)
-I had created a database first, then I had created tables/columns and I had also added details for each column/alter column + import csv.
-
-COPY characters
-FROM ''
-DELIMITER ','
-CSV HEADER;
+I had created an ecommerce database first, then I had created the tables/columns and I had also added details for each column/alter column + import csv. I had also imported the csv via sql terminal which helped with importing all of my tables.
 
 ## (Part 2:  Data Cleaning)  
-I had took these steps to clean data: removed: (irrelevant, redundant, or duplicate data, Clean “structural” issues, Type conversion, Clean missing data, Clean outliers, Validate).
+I had took these steps to clean data: removed: (irrelevant, redundant, or duplicate data, Clean “structural” issues, Type conversion, Clean missing data, Clean outliers, Validate). I had also taken numerous steps to clean the data
 
 ## (Part 3: Starting with Questions)
 I had answered the 5 questions as well as included the querry used that shows the steps I took to get the answer.
@@ -43,6 +33,8 @@ I had used a variety of codes and steps for my QA process to identify risk areas
 I had generated an ERD for my database.
 
 ---
+
+### Some of the codes I had used to transform the data
 
 ##Alter table 
 
