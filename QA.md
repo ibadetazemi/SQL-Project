@@ -1,4 +1,4 @@
-(In the QA.md file, identify and describe your risk areas. Develop and execute a QA process to address them and validate the accuracy of your results.):
+(In the QA.md file, identify and describe your risk areas. Develop and execute a QA process to address them and validate the accuracy of your results):
 
 What are your risk areas? Identify and describe them.
 
