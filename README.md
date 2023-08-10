@@ -4,7 +4,7 @@
 (To create and analyze total revenue generated, sales performance report + to analyze and clean data + find risk areas, identify potential issues + to understand the website visitor buying behaviour, time spent on site and product category.)
 
 ## Process
-### (Step 1: Loading csv Files into Database)
+### (Step 1: Loading CSV Files into Database)
 ### (Step 2: Data Cleaning)
 ###  (Part 3: Starting with Questions)
 ### (Step 4: Starting with Data)
