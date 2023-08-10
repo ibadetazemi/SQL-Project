@@ -14,7 +14,7 @@
 ### (Step 7: Conclusion)
 ### (Step 8: Future Goals)
 
-## (Part 1: Loading csv Files into Database)
+## (Part 1: Loading CSV Files into Database)
 I had created an ecommerce database first, then I had created the tables/columns and I had also added details for each column/alter column + import csv. I had also imported the csv via sql terminal which helped with importing all of my tables.
 
 ## (Part 2:  Data Cleaning)  
